@@ -502,8 +502,6 @@ class WebFallback:
                 except:
                     pass
             else:
-                # Get local time
-                from datetime import datetime
                 now = datetime.now()
                 current_time = now.strftime("%I:%M %p")
                 
