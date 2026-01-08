@@ -190,7 +190,6 @@ class OSController:
         """🖥️ Take screenshot"""
         try:
             import pyautogui
-            from datetime import datetime
             
             # Create screenshots directory if not exists
             screenshots_dir = "Screenshots"
