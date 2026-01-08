@@ -86,7 +86,8 @@ class ConfirmationEngine:
                 'error': str(e)
             }
     
-    def analyze_response(self, response, require_explicit=True):
+    @staticmethod
+    def analyze_response(response, require_explicit=True):
         """✅ Analyze user response for confirmation"""
         response_lower = response.lower().strip()
         
@@ -138,7 +139,8 @@ class ConfirmationEngine:
             # Tie or unclear response - ask again
             return False
     
-    def get_confidence_score(self, response):
+    @staticmethod
+    def get_confidence_score(response):
         """✅ Get confidence score for response analysis"""
         response_lower = response.lower()
         

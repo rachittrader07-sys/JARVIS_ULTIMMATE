@@ -563,7 +563,8 @@ class MusicPlayer:
                 'error': str(e)
             }
     
-    def get_music_library(self):
+    @staticmethod
+    def get_music_library():
         """🎵 Get list of all music files"""
         music_extensions = ['.mp3', '.wav', '.flac', '.m4a', '.wma', '.ogg', '.aac']
         music_library = []

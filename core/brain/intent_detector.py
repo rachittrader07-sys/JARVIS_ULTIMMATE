@@ -14,7 +14,8 @@ class IntentDetector:
         self.intent_patterns = self.load_intent_patterns()
         self.entity_patterns = self.load_entity_patterns()
         
-    def load_intent_patterns(self):
+    @staticmethod
+    def load_intent_patterns():
         """🧠 Load intent recognition patterns"""
         patterns = {
             "open_app": [
@@ -82,7 +83,8 @@ class IntentDetector:
         }
         return patterns
     
-    def load_entity_patterns(self):
+    @staticmethod
+    def load_entity_patterns():
         """🧠 Load entity extraction patterns"""
         patterns = {
             "app_name": r"open\s+(.+?)(?:\s+app|\s+|$)",
@@ -175,7 +177,8 @@ class IntentDetector:
         
         return entities
     
-    def fuzzy_intent_match(self, command_text):
+    @staticmethod
+    def fuzzy_intent_match(command_text):
         """🧠 Fuzzy matching for unknown intents"""
         keywords_intent_map = {
             "open": "open_app",

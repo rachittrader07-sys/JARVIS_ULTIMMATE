@@ -119,7 +119,8 @@ class StateManager:
         self.state_start_time = time.time()
         return True
     
-    def log_state_change(self, transition):
+    @staticmethod
+    def log_state_change(transition):
         """🔄 Log state change to file"""
         try:
             import json

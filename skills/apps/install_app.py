@@ -48,7 +48,8 @@ class InstallApp:
             self.tts.speak(f"Sir, {app_name} install nahi kar paya")
             return result
     
-    def is_app_installed(self, app_name):
+    @staticmethod
+    def is_app_installed(app_name):
         """📦 Check if app is already installed"""
         try:
             # Try winget list
@@ -65,7 +66,8 @@ class InstallApp:
         except:
             return False
     
-    def install_via_winget(self, app_name):
+    @staticmethod
+    def install_via_winget(app_name):
         """📦 Install app using winget"""
         try:
             print(Fore.CYAN + f"  Installing via winget: {app_name}" + Style.RESET_ALL)
@@ -111,7 +113,8 @@ class InstallApp:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def install_via_chocolatey(self, app_name):
+    @staticmethod
+    def install_via_chocolatey(app_name):
         """📦 Install app using Chocolatey"""
         try:
             print(Fore.CYAN + f"  Installing via Chocolatey: {app_name}" + Style.RESET_ALL)
@@ -137,7 +140,8 @@ class InstallApp:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def install_via_scoop(self, app_name):
+    @staticmethod
+    def install_via_scoop(app_name):
         """📦 Install app using Scoop"""
         try:
             print(Fore.CYAN + f"  Installing via Scoop: {app_name}" + Style.RESET_ALL)
@@ -163,7 +167,8 @@ class InstallApp:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def install_direct_download(self, app_name):
+    @staticmethod
+    def install_direct_download(app_name):
         """📦 Install app via direct download"""
         try:
             print(Fore.CYAN + f"  Downloading directly: {app_name}" + Style.RESET_ALL)
@@ -240,7 +245,8 @@ class InstallApp:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def check_package_manager_available(self):
+    @staticmethod
+    def check_package_manager_available():
         """📦 Check which package managers are available"""
         available = []
         

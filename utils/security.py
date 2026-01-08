@@ -15,7 +15,8 @@ class SecurityManager:
         self.permissions = self.load_permissions()
         self.voice_profiles = self.load_voice_profiles()
         
-    def load_permissions(self):
+    @staticmethod
+    def load_permissions():
         """🔒 Load permissions from file"""
         permissions_file = "memory/permissions.json"
         default_permissions = {
@@ -45,7 +46,8 @@ class SecurityManager:
         
         return default_permissions
     
-    def load_voice_profiles(self):
+    @staticmethod
+    def load_voice_profiles():
         """🔒 Load voice profiles"""
         profiles_file = "memory/voice_profiles.json"
         
@@ -208,7 +210,8 @@ class SecurityManager:
         except Exception as e:
             print(Fore.YELLOW + f"⚠️ Security log error: {str(e)}" + Style.RESET_ALL)
     
-    def get_ip_address(self):
+    @staticmethod
+    def get_ip_address():
         """🔒 Get IP address"""
         try:
             import socket
@@ -216,7 +219,8 @@ class SecurityManager:
         except:
             return "unknown"
     
-    def encrypt_data(self, data, key):
+    @staticmethod
+    def encrypt_data(data, key):
         """🔒 Simple encryption (for demonstration)"""
         # Note: In production, use proper encryption like AES
         import base64
@@ -224,7 +228,8 @@ class SecurityManager:
         encoded = base64.b64encode(data_str.encode()).decode()
         return encoded
     
-    def decrypt_data(self, encrypted_data, key):
+    @staticmethod
+    def decrypt_data(encrypted_data, key):
         """🔒 Simple decryption"""
         import base64
         try:

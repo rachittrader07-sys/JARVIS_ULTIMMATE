@@ -111,7 +111,8 @@ class DecisionEngine:
             'requires_confirmation': False
         }
     
-    def decide_search_web(self, entities, context):
+    @staticmethod
+    def decide_search_web(entities, context):
         """🎯 Decide how to search web"""
         query = entities.get('query', '')
         
@@ -151,7 +152,8 @@ class DecisionEngine:
             'requires_confirmation': not message  # Confirm if message is empty
         }
     
-    def decide_play_music(self, entities, context):
+    @staticmethod
+    def decide_play_music(entities, context):
         """🎯 Decide how to play music"""
         song = entities.get('song', '')
         
@@ -165,7 +167,8 @@ class DecisionEngine:
             'requires_confirmation': False
         }
     
-    def decide_system_info(self, entities, context):
+    @staticmethod
+    def decide_system_info(entities, context):
         """🎯 Decide what system info to show"""
         query = entities.get('query', 'all')
         
@@ -178,7 +181,8 @@ class DecisionEngine:
             'requires_confirmation': False
         }
     
-    def decide_control_window(self, entities, context):
+    @staticmethod
+    def decide_control_window(entities, context):
         """🎯 Decide window control action"""
         # Extract action from entities
         action = "minimize"
@@ -199,7 +203,8 @@ class DecisionEngine:
             'requires_confirmation': action == "close"  # Confirm for close
         }
     
-    def decide_code_assist(self, entities, context):
+    @staticmethod
+    def decide_code_assist(entities, context):
         """🎯 Decide coding assistance"""
         query = str(entities).lower()
         
@@ -213,7 +218,8 @@ class DecisionEngine:
             'requires_confirmation': False
         }
     
-    def decide_custom_command(self, entities, context):
+    @staticmethod
+    def decide_custom_command(entities, context):
         """🎯 Decide custom command execution"""
         command_name = entities.get('command_name', '')
         actions = entities.get('actions', [])
@@ -228,7 +234,8 @@ class DecisionEngine:
             'requires_confirmation': False
         }
     
-    def decide_unknown(self, intent, entities, context):
+    @staticmethod
+    def decide_unknown(intent, entities, context):
         """🎯 Decide for unknown intents"""
         # Use AI fallback for unknown commands
         return {
@@ -242,7 +249,8 @@ class DecisionEngine:
             'requires_confirmation': True
         }
     
-    def load_skill_weights(self):
+    @staticmethod
+    def load_skill_weights():
         """🎯 Load skill usage weights"""
         weights_file = "memory/skill_weights.json"
         default_weights = {
@@ -265,7 +273,8 @@ class DecisionEngine:
         
         return default_weights
     
-    def get_known_apps(self):
+    @staticmethod
+    def get_known_apps():
         """🎯 Get list of known apps"""
         apps_file = "memory/known_apps.json"
         default_apps = [
@@ -285,7 +294,8 @@ class DecisionEngine:
         
         return default_apps
     
-    def get_contacts(self):
+    @staticmethod
+    def get_contacts():
         """🎯 Get list of contacts"""
         contacts_file = "memory/contacts.json"
         
@@ -298,7 +308,8 @@ class DecisionEngine:
         
         return []
     
-    def is_dangerous_app(self, app_name):
+    @staticmethod
+    def is_dangerous_app(app_name):
         """🎯 Check if app is dangerous"""
         dangerous_apps = [
             'cmd', 'powershell', 'regedit', 'taskmgr',
@@ -311,7 +322,8 @@ class DecisionEngine:
         
         return False
     
-    def is_dangerous_website(self, website_name):
+    @staticmethod
+    def is_dangerous_website(website_name):
         """🎯 Check if website is dangerous"""
         dangerous_websites = [
             'virus', 'hack', 'malware', 'phishing',

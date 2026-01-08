@@ -58,7 +58,8 @@ class WebSearch:
             print(Fore.RED + f"❌ {engine} search error: {str(e)}" + Style.RESET_ALL)
             return {'success': False, 'error': str(e)}
     
-    def search_google(self, query):
+    @staticmethod
+    def search_google(query):
         """🔍 Search using Google"""
         try:
             # Open Google search in browser
@@ -76,7 +77,8 @@ class WebSearch:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def search_duckduckgo(self, query):
+    @staticmethod
+    def search_duckduckgo(query):
         """🔍 Search using DuckDuckGo"""
         try:
             # Get search results
@@ -115,7 +117,8 @@ class WebSearch:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def search_bing(self, query):
+    @staticmethod
+    def search_bing(query):
         """🔍 Search using Bing"""
         try:
             url = f"https://www.bing.com/search?q={query.replace(' ', '+')}"
@@ -132,7 +135,8 @@ class WebSearch:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def search_google_direct(self, query):
+    @staticmethod
+    def search_google_direct(query):
         """🔍 Direct Google search fallback"""
         try:
             # Simple Google search URL

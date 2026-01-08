@@ -18,7 +18,8 @@ class EmotionMemory:
         
         self.load_memory()
     
-    def load_default_responses(self):
+    @staticmethod
+    def load_default_responses():
         """❤️ Load default emotional responses"""
         return {
             "greeting": {

@@ -15,7 +15,8 @@ class EmpathyEngine:
         self.empathy_level = 0.7  # Default empathy level (0.0 to 1.0)
         self.user_mood_history = []
         
-    def load_emotional_responses(self):
+    @staticmethod
+    def load_emotional_responses():
         """❤️ Load emotional response templates"""
         responses = {
             "happy": {
@@ -165,7 +166,8 @@ class EmpathyEngine:
         # Adjust empathy
         self.adjust_empathy_based_on_mood([m['mood'] for m in self.user_mood_history[-20:]])
     
-    def get_empathy_suggestion(self, situation):
+    @staticmethod
+    def get_empathy_suggestion(situation):
         """❤️ Get empathy suggestion for specific situation"""
         suggestions = {
             "failure": [

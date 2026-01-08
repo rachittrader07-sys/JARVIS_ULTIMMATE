@@ -47,7 +47,8 @@ class ConfigLoader:
         except:
             return False
     
-    def create_directories(self):
+    @staticmethod
+    def create_directories():
         """⚙️ Create required directories"""
         dirs = [
             "voice_profile",
@@ -64,7 +65,8 @@ class ConfigLoader:
                 os.makedirs(dir_name)
                 print(Fore.GREEN + f"📁 Created directory: {dir_name}" + Style.RESET_ALL)
     
-    def get_default_config(self):
+    @staticmethod
+    def get_default_config():
         """⚙️ Get default configuration"""
         return {
             'jarvis': {

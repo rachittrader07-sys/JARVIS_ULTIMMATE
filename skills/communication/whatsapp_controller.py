@@ -126,7 +126,8 @@ class WhatsAppController:
             print(Fore.RED + f"❌ Contact search error: {str(e)}" + Style.RESET_ALL)
             return {'success': False, 'error': str(e)}
     
-    def send_message(self, message):
+    @staticmethod
+    def send_message(message):
         """📱 Type and send message"""
         try:
             # Type message
@@ -144,7 +145,8 @@ class WhatsAppController:
             print(Fore.RED + f"❌ Message send error: {str(e)}" + Style.RESET_ALL)
             return {'success': False, 'error': str(e)}
     
-    def focus_whatsapp(self):
+    @staticmethod
+    def focus_whatsapp():
         """📱 Focus on WhatsApp window"""
         try:
             import pygetwindow as gw
@@ -162,7 +164,8 @@ class WhatsAppController:
         except:
             return False
     
-    def load_contacts(self):
+    @staticmethod
+    def load_contacts():
         """📱 Load saved contacts"""
         contacts_path = "memory/contacts.json"
         contacts = {}

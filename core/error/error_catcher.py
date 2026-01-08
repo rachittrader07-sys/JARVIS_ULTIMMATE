@@ -110,7 +110,8 @@ class ErrorCatcher:
         
         return False
     
-    def fix_microphone(self, error_entry):
+    @staticmethod
+    def fix_microphone(error_entry):
         """🛠️ Fix microphone issues"""
         try:
             # Try to reinitialize audio
@@ -122,7 +123,8 @@ class ErrorCatcher:
         except:
             return False
     
-    def fix_tts(self, error_entry):
+    @staticmethod
+    def fix_tts(error_entry):
         """🛠️ Fix TTS issues"""
         try:
             # Try to reinitialize TTS
@@ -134,7 +136,8 @@ class ErrorCatcher:
         except:
             return False
     
-    def fix_import(self, error_entry):
+    @staticmethod
+    def fix_import(error_entry):
         """🛠️ Fix import issues"""
         try:
             # Extract module name from error
@@ -150,7 +153,8 @@ class ErrorCatcher:
             pass
         return False
     
-    def fix_file(self, error_entry):
+    @staticmethod
+    def fix_file(error_entry):
         """🛠️ Fix file system issues"""
         try:
             # Extract file path from error
@@ -170,7 +174,8 @@ class ErrorCatcher:
             pass
         return False
     
-    def fix_network(self, error_entry):
+    @staticmethod
+    def fix_network(error_entry):
         """🛠️ Fix network issues"""
         try:
             # Try to ping Google to check connectivity
@@ -183,7 +188,8 @@ class ErrorCatcher:
             pass
         return False
     
-    def fix_permission(self, error_entry):
+    @staticmethod
+    def fix_permission(error_entry):
         """🛠️ Fix permission issues"""
         # For Windows, we can't fix permissions easily
         # Just return True to mark as "handled"

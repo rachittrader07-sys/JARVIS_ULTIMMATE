@@ -54,7 +54,8 @@ class LLMReasoner:
             print(Fore.RED + f"❌ LLM reasoning error: {str(e)}" + Style.RESET_ALL)
             return self.fallback_reasoning(query, context)
     
-    def prepare_prompt(self, query, context):
+    @staticmethod
+    def prepare_prompt(query, context):
         """🤖 Prepare prompt for AI"""
         system_prompt = """You are JARVIS, an advanced AI assistant. Your task is to help the user by:
 1. Understanding their intent from natural language
@@ -133,7 +134,8 @@ Important guidelines:
             print(Fore.RED + f"❌ API request error: {str(e)}" + Style.RESET_ALL)
             return None
     
-    def clean_ai_response(self, text):
+    @staticmethod
+    def clean_ai_response(text):
         """🤖 Clean AI response"""
         # Remove markdown formatting
         text = re.sub(r'\*\*(.*?)\*\*', r'\1', text)  # Remove **bold**
@@ -198,7 +200,8 @@ Important guidelines:
         # Default response
         return "Sir, main aapki baat samajh gaya hoon lekin iska best jawab dene ke liye AI ki zaroorat hai. Kya main kuch aur help kar sakta hoon?"
     
-    def extract_topic(self, query):
+    @staticmethod
+    def extract_topic(query):
         """🤖 Extract topic from query"""
         # Remove common question words
         words = ['what', 'how', 'why', 'when', 'where', 'who', 'tell', 'me', 'about', 'kya', 'kaise', 'kyun', 'kab', 'kahan', 'kaun']

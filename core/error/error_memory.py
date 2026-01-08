@@ -19,7 +19,8 @@ class ErrorMemory:
         # Load existing error memory
         self.load_memory()
     
-    def load_solutions_database(self):
+    @staticmethod
+    def load_solutions_database():
         """📊 Load common error solutions database"""
         solutions = {
             "microphone_error": {
@@ -165,7 +166,8 @@ class ErrorMemory:
         
         return None
     
-    def calculate_similarity(self, text1, text2):
+    @staticmethod
+    def calculate_similarity(text1, text2):
         """📊 Calculate text similarity (simple version)"""
         if not text1 or not text2:
             return 0.0

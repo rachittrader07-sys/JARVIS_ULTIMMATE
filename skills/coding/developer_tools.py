@@ -169,7 +169,8 @@ class DeveloperTools:
                 'error': str(e)
             }
     
-    def npm_tools(self, action, args):
+    @staticmethod
+    def npm_tools(action, args):
         """🛠️ NPM package manager tools"""
         try:
             commands = {
@@ -210,7 +211,8 @@ class DeveloperTools:
                 'error': str(e)
             }
     
-    def pip_tools(self, action, args):
+    @staticmethod
+    def pip_tools(action, args):
         """🛠️ PIP package manager tools"""
         try:
             commands = {
@@ -248,7 +250,8 @@ class DeveloperTools:
                 'error': str(e)
             }
     
-    def system_tools(self, action, args):
+    @staticmethod
+    def system_tools(action, args):
         """🛠️ System monitoring and management tools"""
         try:
             if action == 'processes':
