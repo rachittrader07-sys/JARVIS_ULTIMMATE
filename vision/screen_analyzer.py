@@ -16,7 +16,8 @@ class ScreenAnalyzer:
         # Set tesseract path if needed
         # pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
         
-    def capture_screen(self):
+    @staticmethod
+    def capture_screen():
         """👁️ Capture entire screen"""
         try:
             screenshot = ImageGrab.grab()
@@ -25,7 +26,8 @@ class ScreenAnalyzer:
             print(Fore.RED + f"❌ Screen capture failed: {str(e)}" + Style.RESET_ALL)
             return None
     
-    def capture_region(self, x, y, width, height):
+    @staticmethod
+    def capture_region(x, y, width, height):
         """👁️ Capture specific screen region"""
         try:
             screenshot = ImageGrab.grab(bbox=(x, y, x + width, y + height))
@@ -135,7 +137,8 @@ class ScreenAnalyzer:
             print(Fore.RED + f"❌ Dialog detection failed: {str(e)}" + Style.RESET_ALL)
             return []
     
-    def extract_text(self, image):
+    @staticmethod
+    def extract_text(image):
         """👁️ Extract text from image using OCR"""
         try:
             # Use pytesseract
@@ -222,7 +225,8 @@ class ScreenAnalyzer:
         except:
             return errors
     
-    def get_context(self, text, keyword):
+    @staticmethod
+    def get_context(text, keyword):
         """👁️ Get context around keyword in text"""
         try:
             index = text.lower().find(keyword)
@@ -237,7 +241,8 @@ class ScreenAnalyzer:
         except:
             return ""
     
-    def take_action_on_error(self, error_info):
+    @staticmethod
+    def take_action_on_error(error_info):
         """👁️ Take action based on detected error"""
         error_type = error_info.get('type', '')
         text = error_info.get('text', '').lower()

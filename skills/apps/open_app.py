@@ -66,7 +66,8 @@ class OpenApp:
         
         return {'success': False, 'error': 'All methods failed'}
     
-    def open_via_system_path(self, app_name):
+    @staticmethod
+    def open_via_system_path(app_name):
         """🚀 Open app using system PATH"""
         common_executables = {
             'chrome': 'chrome.exe',
@@ -102,7 +103,8 @@ class OpenApp:
         
         return {'success': False}
     
-    def open_via_start_menu(self, app_name):
+    @staticmethod
+    def open_via_start_menu(app_name):
         """🚀 Open app via Start Menu search"""
         try:
             # Use PowerShell to open app
@@ -117,7 +119,8 @@ class OpenApp:
         except:
             return {'success': False}
     
-    def open_via_registry(self, app_name):
+    @staticmethod
+    def open_via_registry(app_name):
         """🚀 Open app via Windows Registry"""
         try:
             # Look in Uninstall registry keys
@@ -167,7 +170,8 @@ class OpenApp:
         except:
             return {'success': False}
     
-    def open_via_common_paths(self, app_name):
+    @staticmethod
+    def open_via_common_paths(app_name):
         """🚀 Open app via common installation paths"""
         common_paths = [
             r"C:\Program Files",
@@ -192,7 +196,8 @@ class OpenApp:
         
         return {'success': False}
     
-    def try_appopener(self, app_name):
+    @staticmethod
+    def try_appopener(app_name):
         """🚀 Try using appopener library"""
         try:
             import appopener
@@ -202,7 +207,8 @@ class OpenApp:
         except:
             return {'success': False}
     
-    def try_system_search(self, app_name):
+    @staticmethod
+    def try_system_search(app_name):
         """🚀 Try Windows search"""
         try:
             # Use Windows search via PowerShell
@@ -217,7 +223,8 @@ class OpenApp:
         except:
             return {'success': False}
     
-    def get_installed_apps(self):
+    @staticmethod
+    def get_installed_apps():
         """🚀 Get list of installed applications"""
         apps = []
         try:

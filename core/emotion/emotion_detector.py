@@ -93,7 +93,8 @@ class EmotionDetector:
         
         return max_emotion
     
-    def detect_from_voice(self, voice_features):
+    @staticmethod
+    def detect_from_voice(voice_features):
         """❤️ Detect emotion from voice features"""
         # Simplified voice emotion detection
         # In real implementation, you would use ML model
@@ -116,7 +117,8 @@ class EmotionDetector:
         
         return "neutral"
     
-    def combine_emotions(self, text_emotion, voice_emotion):
+    @staticmethod
+    def combine_emotions(text_emotion, voice_emotion):
         """❤️ Combine text and voice emotions"""
         if text_emotion == voice_emotion:
             return text_emotion
@@ -156,7 +158,8 @@ class EmotionDetector:
         except:
             pass
     
-    def load_emotion_keywords(self):
+    @staticmethod
+    def load_emotion_keywords():
         """❤️ Load emotion keywords"""
         keywords = {
             "happy": [
@@ -188,7 +191,8 @@ class EmotionDetector:
         
         return keywords
     
-    def get_emotion_response(self, emotion):
+    @staticmethod
+    def get_emotion_response(emotion):
         """❤️ Get appropriate response based on emotion"""
         responses = {
             "happy": {

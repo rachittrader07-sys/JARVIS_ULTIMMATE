@@ -55,7 +55,8 @@ class SystemInfo:
         }
         return info
     
-    def get_general_info(self):
+    @staticmethod
+    def get_general_info():
         """🖥️ Get general system info"""
         info = {
             'system': platform.system(),
@@ -68,7 +69,8 @@ class SystemInfo:
         }
         return info
     
-    def get_cpu_info(self):
+    @staticmethod
+    def get_cpu_info():
         """🖥️ Get CPU information"""
         cpu_percent = psutil.cpu_percent(interval=1)
         cpu_freq = psutil.cpu_freq()
@@ -82,7 +84,8 @@ class SystemInfo:
         }
         return info
     
-    def get_memory_info(self):
+    @staticmethod
+    def get_memory_info():
         """🖥️ Get memory information"""
         mem = psutil.virtual_memory()
         swap = psutil.swap_memory()
@@ -97,7 +100,8 @@ class SystemInfo:
         }
         return info
     
-    def get_disk_info(self):
+    @staticmethod
+    def get_disk_info():
         """🖥️ Get disk information"""
         partitions = psutil.disk_partitions()
         disk_info = {}
@@ -117,7 +121,8 @@ class SystemInfo:
         
         return disk_info
     
-    def get_battery_info(self):
+    @staticmethod
+    def get_battery_info():
         """🖥️ Get battery information"""
         try:
             battery = psutil.sensors_battery()
@@ -134,7 +139,8 @@ class SystemInfo:
         
         return info
     
-    def get_network_info(self):
+    @staticmethod
+    def get_network_info():
         """🖥️ Get network information"""
         try:
             # Get IP address

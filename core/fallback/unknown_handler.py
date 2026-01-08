@@ -80,7 +80,8 @@ class UnknownHandler:
             print(Fore.RED + f"❌ AI query error: {str(e)}" + Style.RESET_ALL)
             return None
     
-    def create_prompt(self, action, params):
+    @staticmethod
+    def create_prompt(action, params):
         """❓ Create prompt for AI"""
         prompt = f"""
         User command/action: {action}

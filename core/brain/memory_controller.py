@@ -64,7 +64,8 @@ class MemoryController:
         
         return results
     
-    def _matches_query(self, entry, query):
+    @staticmethod
+    def _matches_query(entry, query):
         """🧠 Check if entry matches query"""
         # Check in action
         if 'action' in entry and query in str(entry['action']).lower():
@@ -113,7 +114,8 @@ class MemoryController:
                     return entry
         return None
     
-    def _patterns_similar(self, pattern1, pattern2):
+    @staticmethod
+    def _patterns_similar(pattern1, pattern2):
         """🧠 Check if two patterns are similar"""
         # This is a simplified version
         # In production, use more sophisticated similarity checking

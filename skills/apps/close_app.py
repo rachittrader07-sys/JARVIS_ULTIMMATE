@@ -52,7 +52,8 @@ class CloseApp:
         
         return {'success': False, 'error': 'All methods failed'}
     
-    def close_via_taskkill(self, app_name, force=False):
+    @staticmethod
+    def close_via_taskkill(app_name, force=False):
         """❌ Close app using taskkill command"""
         try:
             # Build taskkill command
@@ -70,7 +71,8 @@ class CloseApp:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def close_via_process_termination(self, app_name, force=False):
+    @staticmethod
+    def close_via_process_termination(app_name, force=False):
         """❌ Close app by terminating process"""
         try:
             processes_closed = 0
@@ -100,7 +102,8 @@ class CloseApp:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def close_via_window_close(self, app_name, force=False):
+    @staticmethod
+    def close_via_window_close(app_name, force=False):
         """❌ Close app by closing its window"""
         try:
             import pygetwindow as gw
@@ -137,7 +140,8 @@ class CloseApp:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def close_current_app(self):
+    @staticmethod
+    def close_current_app():
         """❌ Close current active application"""
         try:
             import pygetwindow as gw
@@ -157,7 +161,8 @@ class CloseApp:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def close_all_except(self, exceptions=[]):
+    @staticmethod
+    def close_all_except(exceptions=[]):
         """❌ Close all apps except specified ones"""
         try:
             import pygetwindow as gw
@@ -188,7 +193,8 @@ class CloseApp:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def force_close_unresponsive(self):
+    @staticmethod
+    def force_close_unresponsive():
         """❌ Force close unresponsive applications"""
         try:
             # Use taskkill to close not responding apps

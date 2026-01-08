@@ -690,7 +690,8 @@ class MessageFlow:
                 'error': str(e)
             }
     
-    def calculate_relevance(self, text, query):
+    @staticmethod
+    def calculate_relevance(text, query):
         """💬 Calculate search relevance score"""
         text_lower = text.lower()
         query_lower = query.lower()

@@ -593,7 +593,8 @@ class MediaController:
                 'error': str(e)
             }
     
-    def find_media_file(self, filename):
+    @staticmethod
+    def find_media_file(filename):
         """🎵 Search for media file in common directories"""
         media_extensions = ['.mp3', '.mp4', '.avi', '.mkv', '.wav', '.flac', '.m4a', '.wma']
         

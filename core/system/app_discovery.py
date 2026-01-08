@@ -53,7 +53,8 @@ class AppDiscovery:
         
         return self.installed_apps
     
-    def discover_from_registry(self):
+    @staticmethod
+    def discover_from_registry():
         """🔍 Discover apps from Windows Registry"""
         apps = []
         registry_paths = [
@@ -117,7 +118,8 @@ class AppDiscovery:
         
         return apps
     
-    def discover_from_start_menu(self):
+    @staticmethod
+    def discover_from_start_menu():
         """🔍 Discover apps from Start Menu shortcuts"""
         apps = []
         start_menu_paths = [
@@ -194,7 +196,8 @@ class AppDiscovery:
         
         return apps
     
-    def find_exes_in_directory(self, directory):
+    @staticmethod
+    def find_exes_in_directory(directory):
         """🔍 Find executable files in directory"""
         exes = []
         
@@ -241,7 +244,8 @@ class AppDiscovery:
         
         return results[:10]  # Return top 10 results
     
-    def calculate_relevance(self, app, query):
+    @staticmethod
+    def calculate_relevance(app, query):
         """🔍 Calculate relevance score for search"""
         score = 0
         query_lower = query.lower()
@@ -299,7 +303,8 @@ class AppDiscovery:
         
         return None
     
-    def is_app_running(self, app_name):
+    @staticmethod
+    def is_app_running(app_name):
         """🔍 Check if app is currently running"""
         import psutil
         
@@ -314,7 +319,8 @@ class AppDiscovery:
         
         return False
     
-    def format_size(self, size_bytes):
+    @staticmethod
+    def format_size(size_bytes):
         """🔍 Format size in human readable format"""
         for unit in ['B', 'KB', 'MB', 'GB']:
             if size_bytes < 1024.0:

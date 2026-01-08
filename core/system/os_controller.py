@@ -57,7 +57,8 @@ class OSController:
             self.tts.speak(f"Sir, ye system action main nahi kar sakta")
             return {'success': False, 'error': f'Unknown action: {action}'}
     
-    def shutdown_system(self, delay=0):
+    @staticmethod
+    def shutdown_system(delay=0):
         """🖥️ Shutdown the system"""
         try:
             if platform.system() == "Windows":
@@ -71,7 +72,8 @@ class OSController:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def restart_system(self, delay=0):
+    @staticmethod
+    def restart_system(delay=0):
         """🖥️ Restart the system"""
         try:
             if platform.system() == "Windows":
@@ -85,7 +87,8 @@ class OSController:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def sleep_system(self):
+    @staticmethod
+    def sleep_system():
         """🖥️ Put system to sleep"""
         try:
             if platform.system() == "Windows":
@@ -96,7 +99,8 @@ class OSController:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def lock_system(self):
+    @staticmethod
+    def lock_system():
         """🖥️ Lock the system"""
         try:
             if platform.system() == "Windows":
@@ -107,7 +111,8 @@ class OSController:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def logout_user(self):
+    @staticmethod
+    def logout_user():
         """🖥️ Logout current user"""
         try:
             if platform.system() == "Windows":
@@ -118,7 +123,8 @@ class OSController:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def hibernate_system(self):
+    @staticmethod
+    def hibernate_system():
         """🖥️ Hibernate the system"""
         try:
             if platform.system() == "Windows":
@@ -129,7 +135,8 @@ class OSController:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def increase_brightness(self):
+    @staticmethod
+    def increase_brightness():
         """🖥️ Increase screen brightness"""
         try:
             # This requires special permissions/libraries
@@ -145,7 +152,8 @@ class OSController:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def decrease_brightness(self):
+    @staticmethod
+    def decrease_brightness():
         """🖥️ Decrease screen brightness"""
         try:
             if platform.system() == "Windows":
@@ -159,7 +167,8 @@ class OSController:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def increase_volume(self):
+    @staticmethod
+    def increase_volume():
         """🖥️ Increase system volume"""
         try:
             import pyautogui
@@ -168,7 +177,8 @@ class OSController:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def decrease_volume(self):
+    @staticmethod
+    def decrease_volume():
         """🖥️ Decrease system volume"""
         try:
             import pyautogui
@@ -177,7 +187,8 @@ class OSController:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def toggle_mute(self):
+    @staticmethod
+    def toggle_mute():
         """🖥️ Toggle mute"""
         try:
             import pyautogui
@@ -186,7 +197,8 @@ class OSController:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def take_screenshot(self):
+    @staticmethod
+    def take_screenshot():
         """🖥️ Take screenshot"""
         try:
             import pyautogui
@@ -211,7 +223,8 @@ class OSController:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def manage_clipboard(self, action="copy", text=None):
+    @staticmethod
+    def manage_clipboard(action="copy", text=None):
         """🖥️ Manage clipboard"""
         try:
             import pyperclip
@@ -231,7 +244,8 @@ class OSController:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def get_system_info(self):
+    @staticmethod
+    def get_system_info():
         """🖥️ Get detailed system information"""
         try:
             info = {
@@ -270,7 +284,8 @@ class OSController:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def open_file_explorer(self, path=""):
+    @staticmethod
+    def open_file_explorer(path=""):
         """🖥️ Open file explorer"""
         try:
             if platform.system() == "Windows":
@@ -284,7 +299,8 @@ class OSController:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def open_command_prompt(self):
+    @staticmethod
+    def open_command_prompt():
         """🖥️ Open command prompt"""
         try:
             if platform.system() == "Windows":
@@ -295,7 +311,8 @@ class OSController:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def open_powershell(self):
+    @staticmethod
+    def open_powershell():
         """🖥️ Open PowerShell"""
         try:
             if platform.system() == "Windows":
@@ -306,7 +323,8 @@ class OSController:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def open_task_manager(self):
+    @staticmethod
+    def open_task_manager():
         """🖥️ Open Task Manager"""
         try:
             if platform.system() == "Windows":
@@ -317,7 +335,8 @@ class OSController:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def open_control_panel(self):
+    @staticmethod
+    def open_control_panel():
         """🖥️ Open Control Panel"""
         try:
             if platform.system() == "Windows":

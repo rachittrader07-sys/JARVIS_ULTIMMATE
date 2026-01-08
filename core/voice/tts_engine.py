@@ -113,7 +113,8 @@ class TTSEngine:
             self.engine.setProperty('rate', 180)
             self.engine.setProperty('volume', 1.0)
     
-    def _add_emotion_indicators(self, text, emotion):
+    @staticmethod
+    def _add_emotion_indicators(text, emotion):
         """🔊 Add emotional indicators to text"""
         if not emotion or emotion == "neutral":
             return text

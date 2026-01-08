@@ -275,7 +275,8 @@ class SelfHeal:
             print(Fore.RED + f"  ❌ Fix application error: {str(e)}" + Style.RESET_ALL)
             return False
     
-    def fix_mic_privacy(self):
+    @staticmethod
+    def fix_mic_privacy():
         """🛠️ Fix microphone privacy settings"""
         try:
             # For Windows 10/11
@@ -287,7 +288,8 @@ class SelfHeal:
         except:
             return False
     
-    def restart_audio_services(self):
+    @staticmethod
+    def restart_audio_services():
         """🛠️ Restart audio services"""
         try:
             if sys.platform == "win32":
@@ -301,7 +303,8 @@ class SelfHeal:
         except:
             return False
     
-    def check_internet_connection(self):
+    @staticmethod
+    def check_internet_connection():
         """🛠️ Check internet connection"""
         try:
             import requests
@@ -310,7 +313,8 @@ class SelfHeal:
         except:
             return False
     
-    def switch_to_offline_stt(self):
+    @staticmethod
+    def switch_to_offline_stt():
         """🛠️ Switch to offline speech recognition"""
         try:
             # Try to use Vosk if available
@@ -319,7 +323,8 @@ class SelfHeal:
         except:
             return False
     
-    def check_speaker_connection(self):
+    @staticmethod
+    def check_speaker_connection():
         """🛠️ Check speaker connection"""
         try:
             import pyttsx3
@@ -329,7 +334,8 @@ class SelfHeal:
         except:
             return False
     
-    def reinitialize_tts(self):
+    @staticmethod
+    def reinitialize_tts():
         """🛠️ Reinitialize TTS engine"""
         try:
             import pyttsx3
@@ -340,7 +346,8 @@ class SelfHeal:
         except:
             return False
     
-    def install_package(self, package_name):
+    @staticmethod
+    def install_package(package_name):
         """🛠️ Install missing package"""
         try:
             if package_name:
@@ -350,7 +357,8 @@ class SelfHeal:
         except:
             return False
     
-    def create_missing_directory(self, path):
+    @staticmethod
+    def create_missing_directory(path):
         """🛠️ Create missing directory"""
         try:
             if path:
@@ -360,7 +368,8 @@ class SelfHeal:
         except:
             return False
     
-    def run_as_administrator(self):
+    @staticmethod
+    def run_as_administrator():
         """🛠️ Run as administrator"""
         try:
             import ctypes
@@ -368,7 +377,8 @@ class SelfHeal:
         except:
             return False
     
-    def ping_google(self):
+    @staticmethod
+    def ping_google():
         """🛠️ Ping Google to check connectivity"""
         try:
             result = subprocess.run(['ping', '-n', '1', 'google.com'], 
@@ -377,7 +387,8 @@ class SelfHeal:
         except:
             return False
     
-    def cleanup_memory(self):
+    @staticmethod
+    def cleanup_memory():
         """🛠️ Cleanup memory"""
         try:
             # Close non-essential processes
@@ -393,7 +404,8 @@ class SelfHeal:
         except:
             return False
     
-    def restart_application(self):
+    @staticmethod
+    def restart_application():
         """🛠️ Restart application"""
         try:
             # This would restart JARVIS
@@ -402,7 +414,8 @@ class SelfHeal:
         except:
             return False
     
-    def clear_temp_files(self):
+    @staticmethod
+    def clear_temp_files():
         """🛠️ Clear temporary files"""
         try:
             import tempfile
@@ -421,7 +434,8 @@ class SelfHeal:
         except:
             return False
     
-    def check_system_resources(self):
+    @staticmethod
+    def check_system_resources():
         """🛠️ Check system resources"""
         try:
             cpu_usage = psutil.cpu_percent(interval=1)
@@ -431,7 +445,8 @@ class SelfHeal:
         except:
             return False
     
-    def extract_package_name(self, error_message):
+    @staticmethod
+    def extract_package_name(error_message):
         """🛠️ Extract package name from import error"""
         import re
         match = re.search(r"'(.*?)'", error_message)
@@ -439,7 +454,8 @@ class SelfHeal:
             return match.group(1)
         return None
     
-    def extract_file_path(self, error_message):
+    @staticmethod
+    def extract_file_path(error_message):
         """🛠️ Extract file path from error"""
         import re
         # Look for file paths in error
@@ -542,7 +558,8 @@ class SelfHeal:
         print(Fore.CYAN + "🛠️ Health check complete" + Style.RESET_ALL)
         return results
     
-    def check_microphone(self):
+    @staticmethod
+    def check_microphone():
         """🛠️ Check microphone"""
         try:
             import pyaudio
@@ -553,7 +570,8 @@ class SelfHeal:
         except:
             return False
     
-    def check_python_environment(self):
+    @staticmethod
+    def check_python_environment():
         """🛠️ Check Python environment"""
         try:
             # Check if required packages are installed
@@ -564,7 +582,8 @@ class SelfHeal:
         except:
             return False
     
-    def check_disk_space(self):
+    @staticmethod
+    def check_disk_space():
         """🛠️ Check disk space"""
         try:
             import shutil
@@ -573,7 +592,8 @@ class SelfHeal:
         except:
             return False
     
-    def check_memory_usage(self):
+    @staticmethod
+    def check_memory_usage():
         """🛠️ Check memory usage"""
         try:
             memory = psutil.virtual_memory()
@@ -581,7 +601,8 @@ class SelfHeal:
         except:
             return False
     
-    def check_cpu_usage(self):
+    @staticmethod
+    def check_cpu_usage():
         """🛠️ Check CPU usage"""
         try:
             cpu_usage = psutil.cpu_percent(interval=1)

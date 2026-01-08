@@ -12,7 +12,8 @@ class EntityExtractor:
         self.config = config
         self.entity_patterns = self.load_patterns()
         
-    def load_patterns(self):
+    @staticmethod
+    def load_patterns():
         """🎯 Load entity extraction patterns"""
         patterns = {
             'person_name': [
@@ -66,7 +67,8 @@ class EntityExtractor:
             
         return entities
     
-    def extract_app_name(self, command_text):
+    @staticmethod
+    def extract_app_name(command_text):
         """🎯 Extract app name from command"""
         patterns = [
             r'open\s+(.+?)\s+(?:app|application)',
@@ -83,7 +85,8 @@ class EntityExtractor:
         
         return None
     
-    def extract_website_name(self, command_text):
+    @staticmethod
+    def extract_website_name(command_text):
         """🎯 Extract website name from command"""
         patterns = [
             r'open\s+(.+?)\s+website',
@@ -99,7 +102,8 @@ class EntityExtractor:
         
         return None
     
-    def extract_search_query(self, command_text):
+    @staticmethod
+    def extract_search_query(command_text):
         """🎯 Extract search query from command"""
         patterns = [
             r'search\s+(.+)',
@@ -116,7 +120,8 @@ class EntityExtractor:
         
         return None
     
-    def extract_person_name(self, command_text):
+    @staticmethod
+    def extract_person_name(command_text):
         """🎯 Extract person name from command"""
         patterns = [
             r'to\s+(.+)',
@@ -136,7 +141,8 @@ class EntityExtractor:
         
         return None
     
-    def extract_message_content(self, command_text):
+    @staticmethod
+    def extract_message_content(command_text):
         """🎯 Extract message content from command"""
         patterns = [
             r'message\s+(.+)',

@@ -39,7 +39,8 @@ class WindowManager:
             self.tts.speak(f"Sir, window {action} nahi kar paya")
             return result
     
-    def manage_current_window(self, action):
+    @staticmethod
+    def manage_current_window(action):
         """🪟 Manage current active window"""
         try:
             # Get active window
@@ -69,7 +70,8 @@ class WindowManager:
             print(Fore.RED + f"❌ Window management error: {str(e)}" + Style.RESET_ALL)
             return {'success': False, 'error': str(e)}
     
-    def manage_all_windows(self, action):
+    @staticmethod
+    def manage_all_windows(action):
         """🪟 Manage all windows"""
         try:
             windows = gw.getAllWindows()
@@ -148,7 +150,8 @@ class WindowManager:
             print(Fore.RED + f"❌ Specific window error: {str(e)}" + Style.RESET_ALL)
             return {'success': False, 'error': str(e)}
     
-    def move_window(self, window, x, y):
+    @staticmethod
+    def move_window(window, x, y):
         """🪟 Move window to specific position"""
         try:
             window.moveTo(x, y)
@@ -156,7 +159,8 @@ class WindowManager:
         except:
             return False
     
-    def resize_window(self, window, width, height):
+    @staticmethod
+    def resize_window(window, width, height):
         """🪟 Resize window"""
         try:
             window.resizeTo(width, height)
@@ -164,7 +168,8 @@ class WindowManager:
         except:
             return False
     
-    def switch_to_window(self, window_title):
+    @staticmethod
+    def switch_to_window(window_title):
         """🪟 Switch to specific window"""
         try:
             windows = gw.getWindowsWithTitle(window_title)
@@ -189,7 +194,8 @@ class WindowManager:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def get_window_list(self):
+    @staticmethod
+    def get_window_list():
         """🪟 Get list of all open windows"""
         try:
             windows = gw.getAllWindows()
@@ -211,7 +217,8 @@ class WindowManager:
             print(Fore.RED + f"❌ Get window list error: {str(e)}" + Style.RESET_ALL)
             return []
     
-    def arrange_windows(self, arrangement='cascade'):
+    @staticmethod
+    def arrange_windows(arrangement='cascade'):
         """🪟 Arrange windows in different patterns"""
         try:
             windows = gw.getAllWindows()
@@ -285,7 +292,8 @@ class WindowManager:
             print(Fore.RED + f"❌ Window arrangement error: {str(e)}" + Style.RESET_ALL)
             return {'success': False, 'error': str(e)}
     
-    def get_active_window_info(self):
+    @staticmethod
+    def get_active_window_info():
         """🪟 Get information about active window"""
         try:
             window = gw.getActiveWindow()

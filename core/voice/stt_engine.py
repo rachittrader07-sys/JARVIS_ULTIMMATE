@@ -80,7 +80,8 @@ class STTEngine:
         """🎙️ Google Speech Recognition"""
         return self.recognizer.recognize_google(audio, language=self.language)
     
-    def recognize_vosk(self, audio):
+    @staticmethod
+    def recognize_vosk(audio):
         """🎙️ Offline recognition with Vosk"""
         try:
             import vosk
@@ -111,7 +112,8 @@ class STTEngine:
         
         return None
     
-    def recognize_whisper(self, audio):
+    @staticmethod
+    def recognize_whisper(audio):
         """🎙️ Whisper speech recognition (if available)"""
         try:
             import whisper
@@ -132,7 +134,8 @@ class STTEngine:
         except:
             return None
     
-    def normalize_text(self, text):
+    @staticmethod
+    def normalize_text(text):
         """🎙️ Normalize Hinglish text"""
         normalization_map = {
             "kitni hai": "kitna hai",

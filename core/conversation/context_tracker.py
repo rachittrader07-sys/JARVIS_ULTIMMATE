@@ -25,7 +25,8 @@ class ContextTracker:
         
         print(Fore.GREEN + "✅ Context Tracker Initialized" + Style.RESET_ALL)
     
-    def load_context_patterns(self):
+    @staticmethod
+    def load_context_patterns():
         """🗣️ Load context recognition patterns"""
         patterns = {
             "youtube": {

@@ -336,7 +336,8 @@ class CodeAnalyzer:
         
         return issues
     
-    def calculate_python_metrics(self, code, tree):
+    @staticmethod
+    def calculate_python_metrics(code, tree):
         """🔍 Calculate Python code metrics"""
         metrics = {
             'lines_of_code': len(code.split('\n')),
@@ -376,7 +377,8 @@ class CodeAnalyzer:
         
         return metrics
     
-    def determine_complexity(self, metrics):
+    @staticmethod
+    def determine_complexity(metrics):
         """🔍 Determine code complexity level"""
         score = metrics.get('complexity_score', 0)
         
@@ -391,7 +393,8 @@ class CodeAnalyzer:
         else:
             return 'very_high'
     
-    def analyze_javascript_code(self, code, analysis_type):
+    @staticmethod
+    def analyze_javascript_code(code, analysis_type):
         """🔍 Analyze JavaScript code (simplified)"""
         try:
             analysis = {
@@ -440,7 +443,8 @@ class CodeAnalyzer:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def analyze_java_code(self, code, analysis_type):
+    @staticmethod
+    def analyze_java_code(code, analysis_type):
         """🔍 Analyze Java code (simplified)"""
         try:
             analysis = {
@@ -486,7 +490,8 @@ class CodeAnalyzer:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def analyze_general_code(self, code, language, analysis_type):
+    @staticmethod
+    def analyze_general_code(code, language, analysis_type):
         """🔍 Analyze general code for any language"""
         try:
             analysis = {
@@ -523,7 +528,8 @@ class CodeAnalyzer:
         except Exception as e:
             return {'success': False, 'error': str(e)}
     
-    def get_analysis_summary(self, result):
+    @staticmethod
+    def get_analysis_summary(result):
         """🔍 Get human-readable analysis summary"""
         analysis = result.get('analysis', {})
         
@@ -562,7 +568,8 @@ class CodeAnalyzer:
         
         return f"{language} analysis: {', '.join(summary_parts)}"
     
-    def explain_error(self, error_type, error_message):
+    @staticmethod
+    def explain_error(error_type, error_message):
         """🔍 Explain an error in simple terms"""
         explanations = {
             'syntax_error': "There's a syntax error in your code. Check for missing brackets, quotes, or colons.",

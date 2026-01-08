@@ -26,7 +26,8 @@ class JarvisInstaller:
         self.memory_dir = "memory"
         self.tools_dir = "tools"
         
-    def print_banner(self):
+    @staticmethod
+    def print_banner():
         """🔧 Print installation banner"""
         banner = f"""
 {Fore.CYAN}
@@ -42,7 +43,8 @@ class JarvisInstaller:
 """
         print(banner)
     
-    def check_python_version(self):
+    @staticmethod
+    def check_python_version():
         """🔧 Check Python version"""
         print(f"{Fore.YELLOW}[1/8] Checking Python version...{Style.RESET_ALL}")
         
@@ -251,7 +253,8 @@ class JarvisInstaller:
             print(f"  {Fore.YELLOW}⚠{Style.RESET_ALL} Windows dependency installation had issues: {e}")
             return True  # Continue anyway
     
-    def install_linux_dependencies(self):
+    @staticmethod
+    def install_linux_dependencies():
         """🔧 Install Linux-specific dependencies"""
         try:
             print("  Installing Linux packages...")
@@ -311,7 +314,8 @@ class JarvisInstaller:
             print(f"  {Fore.YELLOW}⚠{Style.RESET_ALL} Linux dependency installation had issues: {e}")
             return True  # Continue anyway
     
-    def install_macos_dependencies(self):
+    @staticmethod
+    def install_macos_dependencies():
         """🔧 Install macOS-specific dependencies"""
         try:
             print("  Installing macOS packages...")
@@ -379,7 +383,8 @@ class JarvisInstaller:
             print(f"    {Fore.YELLOW}⚠{Style.RESET_ALL} Tool download failed: {e}")
             return False
     
-    def setup_voice_profile(self):
+    @staticmethod
+    def setup_voice_profile():
         """🔧 Setup voice profile and models"""
         print(f"{Fore.YELLOW}[6/8] Setting up voice profile...{Style.RESET_ALL}")
         
@@ -460,7 +465,8 @@ class JarvisInstaller:
         
         return True
     
-    def get_code_writer_skill(self):
+    @staticmethod
+    def get_code_writer_skill():
         """🔧 Return sample code writer skill"""
         return '''"""
 💻 Code Writer Skill
@@ -481,7 +487,8 @@ class CodeWriter:
         return {'success': True, 'message': 'Code Writer ready'}
 '''
     
-    def get_confirmation_engine_skill(self):
+    @staticmethod
+    def get_confirmation_engine_skill():
         """🔧 Return sample confirmation engine skill"""
         return '''"""
 ✅ Confirmation Engine
@@ -501,7 +508,8 @@ class ConfirmationEngine:
         return {'success': True, 'message': 'Confirmation Engine ready'}
 '''
     
-    def get_control_media_skill(self):
+    @staticmethod
+    def get_control_media_skill():
         """🔧 Return sample media control skill"""
         return '''"""
 🎵 Media Controller
@@ -520,7 +528,8 @@ class MediaController:
         return {'success': True, 'message': 'Media Controller ready'}
 '''
     
-    def get_website_resolver_skill(self):
+    @staticmethod
+    def get_website_resolver_skill():
         """🔧 Return sample website resolver skill"""
         return '''"""
 🌐 Website Resolver

@@ -94,7 +94,8 @@ class URLOpener:
         
         return {'success': False}
     
-    def intelligent_website_search(self, website_name):
+    @staticmethod
+    def intelligent_website_search(website_name):
         """🌐 Intelligent search for unknown websites"""
         try:
             # Use DuckDuckGo to search
@@ -138,7 +139,8 @@ class URLOpener:
         
         return {'success': False}
     
-    def check_url_exists(self, url):
+    @staticmethod
+    def check_url_exists(url):
         """🌐 Check if URL exists"""
         try:
             response = requests.head(url, timeout=3, allow_redirects=True)

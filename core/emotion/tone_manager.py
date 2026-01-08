@@ -16,7 +16,8 @@ class ToneManager:
         # Initialize TTS engine
         self.initialize_engine()
     
-    def load_tone_settings(self):
+    @staticmethod
+    def load_tone_settings():
         """🎵 Load tone settings for different emotions"""
         settings = {
             "happy": {
