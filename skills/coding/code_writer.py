@@ -3,10 +3,12 @@
 Helps with coding tasks
 """
 
-import pyautogui
-import time
 import os
+import time
+
+import pyautogui
 from colorama import Fore, Style
+
 
 class CodeWriter:
     def __init__(self, config, tts):
