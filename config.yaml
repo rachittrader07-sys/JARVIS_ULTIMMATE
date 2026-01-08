@@ -1,0 +1,316 @@
+# 🎯 JARVIS Configuration File
+# Copy this file to config.yaml and edit with your API keys
+# Created: 2024
+# Version: 3.0
+
+jarvis:
+  # Basic Information
+  name: "JARVIS"
+  version: "3.0"
+  language: "hinglish"  # Hindi + English mixed
+  
+  # Voice Settings
+  voice:
+    gender: "male"      # Male voice
+    rate: 180           # Speech speed (words per minute)
+    volume: 1.0         # Volume level (0.0 to 1.0)
+    accent: "indian"    # Indian accent
+  
+  # Wake Word Settings
+  wake_word: "jarvis"
+  listening_timeout: 5  # Seconds to listen for command
+  
+  # 🚨🚨🚨 IMPORTANT: ADD YOUR OPENROUTER API KEY HERE 🚨🚨🚨
+  openrouter:
+    api_key: "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"  # 🔴 YAHAN API KEY DALEN
+    model: "deepseek/deepseek-r1:free"
+    endpoint: "https://openrouter.ai/api/v1/chat/completions"
+  # 🚨🚨🚨 API KEY YAHAN TAK 🚨🚨🚨
+  
+  # Security Settings
+  security:
+    voice_auth: true       # Enable voice authentication
+    face_auth: false       # Disable face auth for now
+    permission_level: "high"  # High security level
+  
+  # Memory Settings
+  memory:
+    short_term_size: 50    # Remember last 50 commands
+    long_term_days: 30     # Keep memory for 30 days
+  
+  # Emotion Settings
+  emotions:
+    enabled: true          # Enable emotion detection
+    sensitivity: 0.7       # Emotion sensitivity (0.1 to 1.0)
+  
+  # Visual Indicators (Emojis)
+  indicators:
+    listening: "🎙️"
+    thinking: "🧠"
+    success: "✅"
+    error: "❌"
+    warning: "⚠️"
+    searching: "🔍"
+    app_open: "🚀"
+    message_sent: "📱✅"
+    voice_train: "🎤"
+    custom_cmd: "🛠️"
+    system_info: "🖥️"
+    heal: "🛠️🔄"
+
+# File Paths Configuration
+paths:
+  voice_profile: "voice_profile/voice_fingerprint.npy"
+  commands: "commands.json"
+  memory_short: "memory/short_term.json"
+  memory_long: "memory/long_term.json"
+  custom_cmds: "memory/custom_commands.json"
+  error_log: "memory/error_log.json"
+
+# Common Websites Database
+websites:
+  common:
+    youtube: "https://youtube.com"
+    google: "https://google.com"
+    github: "https://github.com"
+    whatsapp: "https://web.whatsapp.com"
+    facebook: "https://facebook.com"
+    instagram: "https://instagram.com"
+    twitter: "https://twitter.com"
+    linkedin: "https://linkedin.com"
+    netflix: "https://netflix.com"
+    amazon: "https://amazon.in"
+    flipkart: "https://flipkart.com"
+    stackoverflow: "https://stackoverflow.com"
+    wikipedia: "https://wikipedia.org"
+    gmail: "https://gmail.com"
+    outlook: "https://outlook.com"
+    drive: "https://drive.google.com"
+    photoshop: "https://photoshop.com"
+    canva: "https://canva.com"
+    notepad: "notepad.exe"  # Windows app
+    calculator: "calc.exe"  # Windows app
+
+# App Aliases (Common names for applications)
+app_aliases:
+  chrome: ["google chrome", "browser", "web browser"]
+  firefox: ["mozilla", "firefox browser"]
+  vscode: ["visual studio code", "code editor", "vs code"]
+  notepad: ["text editor", "notepad++", "textpad"]
+  calculator: ["calc", "kalkulator", "hisab kitab"]
+  whatsapp: ["whatsapp desktop", "whatsapp app", "message app"]
+  spotify: ["music app", "gaana app", "song player"]
+  photoshop: ["photo editor", "image editor", "adobe photoshop"]
+  excel: ["spreadsheet", "microsoft excel", "excel sheet"]
+  word: ["document", "microsoft word", "word processor"]
+  powerpoint: ["presentation", "microsoft powerpoint", "slides"]
+
+# Command Shortcuts (Custom command suggestions)
+command_shortcuts:
+  night_mode:
+    trigger: "night mode"
+    actions:
+      - "close all apps"
+      - "reduce brightness"
+      - "enable blue light filter"
+    description: "Prepare system for night time"
+  
+  work_mode:
+    trigger: "work mode"
+    actions:
+      - "open vscode"
+      - "open chrome"
+      - "open notepad"
+      - "mute notifications"
+    description: "Setup for work environment"
+  
+  meeting_mode:
+    trigger: "meeting mode"
+    actions:
+      - "mute system"
+      - "open zoom"
+      - "open notes"
+      - "enable do not disturb"
+    description: "Prepare for online meeting"
+
+# System Settings
+system:
+  auto_update: true
+  backup_enabled: true
+  backup_interval: 24  # Hours
+  max_log_size: 10     # MB
+  
+  # Performance Settings
+  cpu_threshold: 80    # Alert if CPU > 80%
+  ram_threshold: 85    # Alert if RAM > 85%
+  disk_threshold: 90   # Alert if Disk > 90%
+  
+  # Network Settings
+  check_internet: true
+  network_timeout: 5   # Seconds
+  
+  # Voice Settings (Advanced)
+  voice_recognition:
+    engine: "google"   # google, vosk, whisper
+    language: "hi-IN"  # Hindi-Indian
+    timeout: 5
+    phrase_limit: 10
+  
+  text_to_speech:
+    engine: "pyttsx3"  # pyttsx3, gtts
+    voice_id: "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\Voices\\Tokens\\TTS_MS_EN-US_DAVID_11.0"
+    save_audio: false
+
+# Learning & Adaptation Settings
+learning:
+  enabled: true
+  save_frequency: 10   # Save after every 10 commands
+  max_custom_commands: 100
+  pattern_recognition: true
+  suggest_improvements: true
+  
+  # Personalization
+  remember_preferences: true
+  learn_schedule: true
+  adapt_to_mood: true
+
+# User Profile (You can customize this)
+user:
+  name: "Sir"
+  gender: "male"
+  profession: "developer"
+  preferences:
+    default_browser: "chrome"
+    default_music: "youtube"
+    default_editor: "vscode"
+    theme: "dark"
+    language: "hinglish"
+  
+  # Security Preferences
+  security:
+    confirm_dangerous: true
+    confirm_delete: true
+    confirm_shutdown: true
+    require_voice_auth: true
+  
+  # Notification Preferences
+  notifications:
+    enable_sound: true
+    enable_popup: false
+    silent_mode: false
+    do_not_disturb: false
+
+# Backup Configuration
+backup:
+  enabled: true
+  location: "backups/"
+  frequency: "daily"
+  keep_backups: 7
+  include:
+    - "memory/"
+    - "voice_profile/"
+    - "config.yaml"
+    - "commands.json"
+  exclude:
+    - "logs/"
+    - "temp/"
+
+# Logging Configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  console: true
+  file: true
+  max_file_size: 10  # MB
+  backup_count: 5
+  
+  # What to log
+  log_commands: true
+  log_errors: true
+  log_performance: true
+  log_security: true
+
+# Advanced Features (Optional)
+advanced:
+  # AI Features
+  use_ai_for_unknown: true
+  ai_timeout: 10
+  ai_max_tokens: 500
+  
+  # Vision Features
+  screen_analysis: true
+  error_detection: true
+  ocr_enabled: true
+  
+  # Automation Features
+  auto_complete: true
+  smart_suggestions: true
+  predictive_typing: false
+  
+  # Experimental Features
+  experimental:
+    gesture_control: false
+    eye_tracking: false
+    brain_wave: false
+    ar_mode: false
+
+# Plugin System (For Future Extensions)
+plugins:
+  enabled: false
+  directory: "plugins/"
+  auto_load: false
+  allowed_plugins:
+    - "weather"
+    - "news"
+    - "stocks"
+    - "reminders"
+
+# Network Services
+services:
+  # Weather Service
+  weather:
+    enabled: false
+    api_key: ""
+    provider: "openweathermap"
+    city: "Delhi"
+    units: "metric"
+  
+  # News Service
+  news:
+    enabled: false
+    api_key: ""
+    provider: "newsapi"
+    country: "in"
+    category: "technology"
+  
+  # Email Service
+  email:
+    enabled: false
+    smtp_server: ""
+    smtp_port: 587
+    username: ""
+    password: ""
+  
+  # Cloud Backup
+  cloud:
+    enabled: false
+    provider: ""  # google, dropbox, onedrive
+    access_token: ""
+
+# Debug & Development Settings
+debug:
+  enabled: false
+  log_level: "DEBUG"
+  show_technical_details: false
+  test_mode: false
+  
+  # Testing Features
+  test_voice: false
+  test_ai: false
+  test_skills: false
+  test_performance: false
+  
+  # Development Tools
+  developer_mode: false
+  api_testing: false
+  unit_tests: false
+  integration_tests: false
