@@ -570,7 +570,7 @@ class DeveloperTools:
                         'error': 'Python formatter not installed. Install autopep8 or black'
                     }
             
-            elif ext == '.js' or ext == '.ts' or ext == '.jsx' or ext == '.tsx':
+            elif ext in ('.js', '.ts', '.jsx', '.tsx'):
                 # Format JavaScript/TypeScript with prettier
                 try:
                     result = subprocess.run(f'npx prettier --write {file_path}', shell=True, capture_output=True, text=True)
@@ -625,7 +625,7 @@ class DeveloperTools:
                 self.tts.speak(f"Ran tests in {test_path}")
                 
                 return {
-                    'success': result.returncode == 0 or result.returncode == 5,  # 5 means no tests found
+                    'success': result.returncode in (0, 5),  # 5 means no tests found
                     'tool': 'test',
                     'action': 'run_pytest',
                     'path': test_path,
